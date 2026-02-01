@@ -1,0 +1,128 @@
+/* ============================================================================
+   ROSEWOOD UI — Modals & Dialogs
+   ============================================================================
+   Usage:
+     <div class="rw-overlay">
+       <div class="rw-modal">
+         <div class="rw-modal__header">
+           <h3 class="rw-modal__title">Title</h3>
+           <button class="rw-modal__close">&times;</button>
+         </div>
+         <div class="rw-modal__body">Content</div>
+         <div class="rw-modal__footer">Actions</div>
+       </div>
+     </div>
+   ============================================================================ */
+
+/* ── Overlay ── */
+.rw-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--rw-z-overlay);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: rw-fade-in 0.2s ease-out;
+}
+
+/* ── Modal ── */
+.rw-modal {
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  background: var(--rw-surface);
+  border: 1px solid var(--rw-border);
+  border-radius: var(--rw-radius-xl);
+  position: relative;
+  animation: rw-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--rw-shadow-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.rw-modal--sm { max-width: 360px; }
+.rw-modal--lg { max-width: 640px; }
+.rw-modal--full { max-width: 90vw; max-height: 90vh; }
+
+.rw-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--rw-space-lg) var(--rw-space-lg) var(--rw-space-md);
+}
+
+.rw-modal__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--rw-text);
+}
+
+.rw-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--rw-radius-sm);
+  background: none;
+  border: none;
+  color: var(--rw-text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--rw-transition-fast);
+}
+
+.rw-modal__close:hover {
+  background: var(--rw-surface-hover);
+  color: var(--rw-text);
+}
+
+.rw-modal__body {
+  padding: 0 var(--rw-space-lg) var(--rw-space-lg);
+  overflow-y: auto;
+  color: var(--rw-text-secondary);
+  line-height: 1.6;
+}
+
+.rw-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--rw-space-sm);
+  padding: var(--rw-space-md) var(--rw-space-lg);
+  border-top: 1px solid var(--rw-border-light);
+}
+
+/* ── Dialog (simple centered card) ── */
+.rw-dialog {
+  text-align: center;
+  padding: var(--rw-space-2xl);
+}
+
+.rw-dialog__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--rw-space-md);
+}
+
+.rw-dialog__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--rw-space-sm);
+}
+
+.rw-dialog__text {
+  color: var(--rw-text-secondary);
+  font-size: 0.9375rem;
+  margin-bottom: var(--rw-space-lg);
+}
+
+.rw-dialog__actions {
+  display: flex;
+  gap: var(--rw-space-sm);
+  justify-content: center;
+}

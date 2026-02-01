@@ -1,0 +1,22 @@
+/* ============================================================================
+   🌹 ROSEWOOD UI — v0.1.0
+   ============================================================================
+   A warm, cozy CSS component library.
+   Like a fireplace in code form. 🔥
+   
+   https://github.com/voidreamer/rosewood-ui
+   License: MIT
+   ============================================================================ */
+
+@import './variables.css';
+@import './base.css';
+@import './components/typography.css';
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/inputs.css';
+@import './components/badges.css';
+@import './components/navigation.css';
+@import './components/modals.css';
+@import './components/tables.css';
+@import './components/layout.css';
+@import './components/animations.css';

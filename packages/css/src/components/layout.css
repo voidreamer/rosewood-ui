@@ -1,0 +1,135 @@
+/* ============================================================================
+   ROSEWOOD UI — Layout Utilities
+   ============================================================================
+   Container, grid, flex, spacing utilities.
+   ============================================================================ */
+
+/* ── Container ── */
+.rw-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--rw-space-lg);
+}
+
+.rw-container--sm { max-width: 640px; }
+.rw-container--md { max-width: 860px; }
+.rw-container--lg { max-width: 1080px; }
+.rw-container--full { max-width: none; }
+
+/* ── Grid ── */
+.rw-grid {
+  display: grid;
+  gap: var(--rw-space-lg);
+}
+
+.rw-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.rw-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.rw-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Auto-fit responsive grid */
+.rw-grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.rw-grid--auto-sm {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .rw-grid--2,
+  .rw-grid--3,
+  .rw-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .rw-grid--3,
+  .rw-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Flex ── */
+.rw-flex { display: flex; }
+.rw-flex--col { flex-direction: column; }
+.rw-flex--wrap { flex-wrap: wrap; }
+.rw-flex--center { align-items: center; justify-content: center; }
+.rw-flex--between { justify-content: space-between; }
+.rw-flex--align-center { align-items: center; }
+.rw-flex--gap-xs { gap: var(--rw-space-xs); }
+.rw-flex--gap-sm { gap: var(--rw-space-sm); }
+.rw-flex--gap-md { gap: var(--rw-space-md); }
+.rw-flex--gap-lg { gap: var(--rw-space-lg); }
+.rw-flex--gap-xl { gap: var(--rw-space-xl); }
+
+/* ── Stack (vertical flex with gap) ── */
+.rw-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rw-space-md);
+}
+
+.rw-stack--sm { gap: var(--rw-space-sm); }
+.rw-stack--lg { gap: var(--rw-space-lg); }
+.rw-stack--xl { gap: var(--rw-space-xl); }
+
+/* ── Section spacing ── */
+.rw-section {
+  padding: var(--rw-space-3xl) 0;
+}
+
+.rw-section--alt {
+  background: var(--rw-surface);
+}
+
+/* ── Spacing utilities ── */
+.rw-mt-sm { margin-top: var(--rw-space-sm); }
+.rw-mt-md { margin-top: var(--rw-space-md); }
+.rw-mt-lg { margin-top: var(--rw-space-lg); }
+.rw-mt-xl { margin-top: var(--rw-space-xl); }
+.rw-mb-sm { margin-bottom: var(--rw-space-sm); }
+.rw-mb-md { margin-bottom: var(--rw-space-md); }
+.rw-mb-lg { margin-bottom: var(--rw-space-lg); }
+.rw-mb-xl { margin-bottom: var(--rw-space-xl); }
+.rw-p-sm { padding: var(--rw-space-sm); }
+.rw-p-md { padding: var(--rw-space-md); }
+.rw-p-lg { padding: var(--rw-space-lg); }
+.rw-p-xl { padding: var(--rw-space-xl); }
+
+/* ── Text alignment ── */
+.rw-text-center { text-align: center; }
+.rw-text-left { text-align: left; }
+.rw-text-right { text-align: right; }
+
+/* ── Hidden utilities ── */
+.rw-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Sidebar layout helper ── */
+.rw-layout-sidebar {
+  display: flex;
+  min-height: 100vh;
+}
+
+.rw-layout-sidebar__content {
+  flex: 1;
+  margin-left: 260px;
+  padding: var(--rw-space-lg);
+}
+
+@media (max-width: 768px) {
+  .rw-layout-sidebar__content {
+    margin-left: 0;
+  }
+}

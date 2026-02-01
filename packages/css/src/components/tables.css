@@ -1,0 +1,79 @@
+/* ============================================================================
+   ROSEWOOD UI — Tables
+   ============================================================================
+   Usage:
+     <table class="rw-table">
+       <thead><tr><th>Name</th><th>Status</th></tr></thead>
+       <tbody><tr><td>Item</td><td>Active</td></tr></tbody>
+     </table>
+   ============================================================================ */
+
+.rw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.rw-table thead {
+  border-bottom: 1px solid var(--rw-border);
+}
+
+.rw-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--rw-text-muted);
+}
+
+.rw-table td {
+  padding: 14px 16px;
+  color: var(--rw-text);
+  border-bottom: 1px solid var(--rw-border-light);
+}
+
+.rw-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.rw-table tbody tr:hover {
+  background: var(--rw-surface-hover);
+}
+
+.rw-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Striped ── */
+.rw-table--striped tbody tr:nth-child(even) {
+  background: var(--rw-surface);
+}
+
+/* ── Bordered ── */
+.rw-table--bordered {
+  border: 1px solid var(--rw-border);
+  border-radius: var(--rw-radius-md);
+  overflow: hidden;
+}
+
+.rw-table--bordered th,
+.rw-table--bordered td {
+  border: 1px solid var(--rw-border-light);
+}
+
+/* ── Compact ── */
+.rw-table--compact th,
+.rw-table--compact td {
+  padding: 8px 12px;
+}
+
+/* ── Wrap in card ── */
+.rw-table-wrapper {
+  background: var(--rw-surface);
+  border: 1px solid var(--rw-border-light);
+  border-radius: var(--rw-radius-lg);
+  overflow: hidden;
+  overflow-x: auto;
+}

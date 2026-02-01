@@ -1,0 +1,121 @@
+/* ============================================================================
+   ROSEWOOD UI — Animations
+   ============================================================================
+   Keyframes and utility classes for motion.
+   All animations respect prefers-reduced-motion (see base.css).
+   ============================================================================ */
+
+/* ── Keyframes ── */
+@keyframes rw-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes rw-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rw-slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rw-slide-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rw-scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rw-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes rw-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rw-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes rw-waveform {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes rw-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes rw-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* ── Utility Classes ── */
+.rw-animate-fade-in { animation: rw-fade-in 0.5s ease-out both; }
+.rw-animate-fade-up { animation: rw-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.rw-animate-slide-up { animation: rw-slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.rw-animate-scale-in { animation: rw-scale-in 0.3s ease-out both; }
+.rw-animate-pulse { animation: rw-pulse 2s infinite; }
+.rw-animate-spin { animation: rw-spin 0.8s linear infinite; }
+.rw-animate-float { animation: rw-float 3s ease-in-out infinite; }
+
+/* ── Staggered delays ── */
+.rw-delay-1 { animation-delay: 0.1s; }
+.rw-delay-2 { animation-delay: 0.2s; }
+.rw-delay-3 { animation-delay: 0.3s; }
+.rw-delay-4 { animation-delay: 0.4s; }
+.rw-delay-5 { animation-delay: 0.5s; }
+
+/* ── Waveform bars ── */
+.rw-waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 40px;
+}
+
+.rw-waveform__bar {
+  width: 3px;
+  min-height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--rw-accent), rgba(232, 168, 192, 0.3));
+  animation: rw-waveform 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ── Skeleton loading ── */
+.rw-skeleton {
+  background: linear-gradient(90deg, var(--rw-surface) 25%, var(--rw-surface-hover) 50%, var(--rw-surface) 75%);
+  background-size: 200% 100%;
+  animation: rw-shimmer 1.5s infinite;
+  border-radius: var(--rw-radius-sm);
+}
+
+.rw-skeleton--text { height: 16px; width: 80%; }
+.rw-skeleton--title { height: 24px; width: 60%; }
+.rw-skeleton--avatar { width: 40px; height: 40px; border-radius: 50%; }
+.rw-skeleton--card { height: 120px; border-radius: var(--rw-radius-lg); }
+
+/* ── Spinner ── */
+.rw-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2.5px solid var(--rw-border);
+  border-top-color: var(--rw-accent);
+  border-radius: 50%;
+  animation: rw-spin 0.8s linear infinite;
+}
+
+.rw-spinner--sm { width: 16px; height: 16px; border-width: 2px; }
+.rw-spinner--lg { width: 40px; height: 40px; border-width: 3px; }

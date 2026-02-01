@@ -1,0 +1,239 @@
+/* ============================================================================
+   ROSEWOOD UI — Form Inputs
+   ============================================================================
+   Text inputs, textareas, selects, checkboxes, radio buttons, toggles.
+   
+   Usage:
+     <input class="rw-input" type="text" placeholder="Name">
+     <textarea class="rw-textarea"></textarea>
+     <select class="rw-select"><option>Pick one</option></select>
+     <label class="rw-checkbox"><input type="checkbox"><span>Label</span></label>
+     <button class="rw-toggle rw-toggle--active"></button>
+   ============================================================================ */
+
+/* ── Text Input ── */
+.rw-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--rw-bg);
+  border: 1.5px solid var(--rw-border);
+  border-radius: var(--rw-radius-md);
+  color: var(--rw-text);
+  font-family: var(--rw-font);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rw-input:focus {
+  border-color: var(--rw-accent);
+  box-shadow: 0 0 0 3px var(--rw-accent-bg);
+}
+
+.rw-input::placeholder {
+  color: var(--rw-text-muted);
+}
+
+.rw-input--error {
+  border-color: var(--rw-danger);
+}
+
+.rw-input--error:focus {
+  box-shadow: 0 0 0 3px var(--rw-danger-bg);
+}
+
+/* ── Textarea ── */
+.rw-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--rw-bg);
+  border: 1.5px solid var(--rw-border);
+  border-radius: var(--rw-radius-md);
+  color: var(--rw-text);
+  font-family: var(--rw-font);
+  font-size: 0.9375rem;
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rw-textarea:focus {
+  border-color: var(--rw-accent);
+  box-shadow: 0 0 0 3px var(--rw-accent-bg);
+}
+
+.rw-textarea::placeholder {
+  color: var(--rw-text-muted);
+}
+
+/* ── Select ── */
+.rw-select {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  background: var(--rw-bg);
+  border: 1.5px solid var(--rw-border);
+  border-radius: var(--rw-radius-md);
+  color: var(--rw-text);
+  font-family: var(--rw-font);
+  font-size: 0.9375rem;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a89e98' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rw-select:focus {
+  border-color: var(--rw-accent);
+  box-shadow: 0 0 0 3px var(--rw-accent-bg);
+}
+
+/* ── Form Group ── */
+.rw-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--rw-space-md);
+}
+
+.rw-form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--rw-text);
+}
+
+.rw-form-hint {
+  font-size: 0.75rem;
+  color: var(--rw-text-muted);
+}
+
+.rw-form-error {
+  font-size: 0.75rem;
+  color: var(--rw-danger);
+}
+
+/* ── Checkbox ── */
+.rw-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  color: var(--rw-text);
+  user-select: none;
+}
+
+.rw-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--rw-border);
+  border-radius: 6px;
+  background: var(--rw-bg);
+  cursor: pointer;
+  transition: var(--rw-transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rw-checkbox input[type="checkbox"]:checked {
+  background: var(--rw-accent);
+  border-color: var(--rw-accent);
+}
+
+.rw-checkbox input[type="checkbox"]:checked::after {
+  content: '';
+  width: 5px;
+  height: 9px;
+  border: 2px solid #000;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.rw-checkbox input[type="checkbox"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--rw-accent-bg);
+}
+
+/* ── Radio ── */
+.rw-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  color: var(--rw-text);
+  user-select: none;
+}
+
+.rw-radio input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--rw-border);
+  border-radius: 50%;
+  background: var(--rw-bg);
+  cursor: pointer;
+  transition: var(--rw-transition-fast);
+  flex-shrink: 0;
+}
+
+.rw-radio input[type="radio"]:checked {
+  border-color: var(--rw-accent);
+  background: var(--rw-accent);
+  box-shadow: inset 0 0 0 4px var(--rw-bg);
+}
+
+/* ── Toggle Switch ── */
+.rw-toggle {
+  width: 48px;
+  height: 28px;
+  background: var(--rw-border);
+  border-radius: var(--rw-radius-full);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border: none;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.rw-toggle::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s ease;
+  box-shadow: var(--rw-shadow-sm);
+}
+
+.rw-toggle--active {
+  background: var(--rw-accent);
+}
+
+.rw-toggle--active::after {
+  transform: translateX(20px);
+}
+
+/* ── Input sizes ── */
+.rw-input--sm, .rw-select--sm {
+  padding: 8px 12px;
+  font-size: 0.8125rem;
+  border-radius: var(--rw-radius-sm);
+}
+
+.rw-input--lg, .rw-select--lg {
+  padding: 16px 20px;
+  font-size: 1rem;
+  border-radius: var(--rw-radius-lg);
+}

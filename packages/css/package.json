@@ -1,0 +1,19 @@
+{
+  "name": "@rosewood-ui/css",
+  "version": "0.1.0",
+  "description": "A warm, cozy CSS component library. Like a fireplace in code form. 🔥",
+  "main": "dist/rosewood.css",
+  "style": "dist/rosewood.css",
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["css", "theme", "ui", "components", "dark-mode", "design-system"],
+  "author": "voidreamer",
+  "license": "MIT"
+}

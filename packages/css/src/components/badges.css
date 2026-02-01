@@ -1,0 +1,82 @@
+/* ============================================================================
+   ROSEWOOD UI — Badges
+   ============================================================================
+   Small status indicators and labels.
+   
+   Usage:
+     <span class="rw-badge">Default</span>
+     <span class="rw-badge rw-badge--success">Active</span>
+     <span class="rw-badge rw-badge--danger">Error</span>
+     <span class="rw-badge rw-badge--warning">Pending</span>
+     <span class="rw-badge rw-badge--info">Info</span>
+     <span class="rw-badge rw-badge--accent">Featured</span>
+   ============================================================================ */
+
+.rw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--rw-radius-full);
+  background: var(--rw-surface);
+  color: var(--rw-text-secondary);
+  border: 1px solid var(--rw-border-light);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+/* ── Accent ── */
+.rw-badge--accent {
+  background: var(--rw-accent-bg);
+  color: var(--rw-accent-text);
+  border-color: var(--rw-accent-light);
+}
+
+/* ── Success ── */
+.rw-badge--success {
+  background: var(--rw-success-bg);
+  color: var(--rw-success);
+  border-color: transparent;
+}
+
+/* ── Danger ── */
+.rw-badge--danger {
+  background: var(--rw-danger-bg);
+  color: var(--rw-danger);
+  border-color: transparent;
+}
+
+/* ── Warning ── */
+.rw-badge--warning {
+  background: var(--rw-warning-bg);
+  color: var(--rw-warning);
+  border-color: transparent;
+}
+
+/* ── Info ── */
+.rw-badge--info {
+  background: var(--rw-info-bg);
+  color: var(--rw-info);
+  border-color: transparent;
+}
+
+/* ── Dot indicator ── */
+.rw-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ── Sizes ── */
+.rw-badge--sm {
+  padding: 2px 8px;
+  font-size: 0.6875rem;
+}
+
+.rw-badge--lg {
+  padding: 6px 16px;
+  font-size: 0.875rem;
+}
