@@ -1,0 +1,176 @@
+/* ============================================================================
+   ROSEWOOD UI — Buttons
+   ============================================================================
+   Variants: primary, secondary, ghost, danger
+   Sizes: sm, md (default), lg
+   States: hover, active, disabled, loading
+   
+   Usage:
+     <button class="rw-btn rw-btn--primary">Click me</button>
+     <button class="rw-btn rw-btn--secondary rw-btn--sm">Small</button>
+     <button class="rw-btn rw-btn--ghost rw-btn--lg">Large Ghost</button>
+   ============================================================================ */
+
+.rw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--rw-radius-md);
+  border: none;
+  font-family: var(--rw-font);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--rw-transition);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+/* ── Sizes ── */
+.rw-btn--sm {
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+  border-radius: var(--rw-radius-sm);
+}
+
+.rw-btn--lg {
+  padding: 16px 32px;
+  font-size: 1rem;
+  border-radius: var(--rw-radius-lg);
+}
+
+/* ── Primary: filled accent ── */
+.rw-btn--primary {
+  background: var(--rw-accent);
+  color: #000;
+  box-shadow: var(--rw-shadow-sm);
+}
+
+.rw-btn--primary:hover:not(:disabled) {
+  background: var(--rw-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--rw-shadow-md);
+}
+
+.rw-btn--primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--rw-shadow-sm);
+}
+
+/* ── Secondary: outlined ── */
+.rw-btn--secondary {
+  background: var(--rw-surface);
+  color: var(--rw-text);
+  border: 1px solid var(--rw-border);
+}
+
+.rw-btn--secondary:hover:not(:disabled) {
+  border-color: var(--rw-accent);
+  background: var(--rw-accent-bg);
+  color: var(--rw-accent-text);
+}
+
+/* ── Ghost: transparent ── */
+.rw-btn--ghost {
+  background: transparent;
+  color: var(--rw-text-secondary);
+}
+
+.rw-btn--ghost:hover:not(:disabled) {
+  background: var(--rw-surface-hover);
+  color: var(--rw-text);
+}
+
+/* ── Danger ── */
+.rw-btn--danger {
+  background: var(--rw-danger);
+  color: white;
+}
+
+.rw-btn--danger:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: var(--rw-shadow-md);
+}
+
+/* ── Accent outline ── */
+.rw-btn--accent-outline {
+  background: transparent;
+  color: var(--rw-accent);
+  border: 1px solid var(--rw-accent);
+}
+
+.rw-btn--accent-outline:hover:not(:disabled) {
+  background: var(--rw-accent-bg);
+}
+
+/* ── Pill shape ── */
+.rw-btn--pill {
+  border-radius: var(--rw-radius-full);
+}
+
+/* ── Icon only ── */
+.rw-btn--icon {
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.rw-btn--icon.rw-btn--sm { width: 32px; height: 32px; padding: 6px; }
+.rw-btn--icon.rw-btn--lg { width: 48px; height: 48px; padding: 12px; }
+
+/* ── Full width ── */
+.rw-btn--block {
+  width: 100%;
+}
+
+/* ── Disabled ── */
+.rw-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ── Loading ── */
+.rw-btn--loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.rw-btn--loading::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: rw-spin 0.6s linear infinite;
+}
+
+/* ── Button Group ── */
+.rw-btn-group {
+  display: inline-flex;
+  gap: 0;
+}
+
+.rw-btn-group .rw-btn {
+  border-radius: 0;
+}
+
+.rw-btn-group .rw-btn:first-child {
+  border-radius: var(--rw-radius-md) 0 0 var(--rw-radius-md);
+}
+
+.rw-btn-group .rw-btn:last-child {
+  border-radius: 0 var(--rw-radius-md) var(--rw-radius-md) 0;
+}
+
+@keyframes rw-spin {
+  to { transform: rotate(360deg); }
+}

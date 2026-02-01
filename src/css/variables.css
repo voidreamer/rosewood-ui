@@ -1,0 +1,145 @@
+/* ============================================================================
+   ROSEWOOD UI — CSS Custom Properties
+   ============================================================================
+   All design tokens live here. Override these to customize the theme.
+   
+   Usage:
+     color: var(--rw-accent);
+     background: var(--rw-bg);
+     border-radius: var(--rw-radius-md);
+   
+   Dark mode is default. Add [data-theme="light"] to <html> for light mode.
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ── Dark Theme (Default) ── */
+:root {
+  /* Colors — Primary */
+  --rw-accent: #e8a8c0;
+  --rw-accent-dark: #c0708a;
+  --rw-accent-light: rgba(232, 168, 192, 0.15);
+  --rw-accent-bg: rgba(232, 168, 192, 0.08);
+  --rw-accent-text: #e8a8c0;
+
+  /* Colors — Secondary */
+  --rw-secondary: #b898d0;
+  --rw-secondary-dark: #9878b8;
+  --rw-secondary-light: rgba(184, 152, 208, 0.15);
+  --rw-secondary-bg: rgba(184, 152, 208, 0.08);
+  --rw-secondary-text: #b898d0;
+
+  /* Colors — Backgrounds */
+  --rw-bg: #1a1614;
+  --rw-surface: #201c1a;
+  --rw-surface-hover: #352f2b;
+  --rw-surface-elevated: #2a2420;
+
+  /* Colors — Borders */
+  --rw-border: #3a3230;
+  --rw-border-light: #2a2420;
+
+  /* Colors — Text */
+  --rw-text: #f5f0ec;
+  --rw-text-secondary: #a89e98;
+  --rw-text-muted: #6e6460;
+
+  /* Colors — Semantic */
+  --rw-success: #88c8a8;
+  --rw-success-bg: rgba(136, 200, 168, 0.1);
+  --rw-danger: #e87070;
+  --rw-danger-bg: rgba(232, 112, 112, 0.1);
+  --rw-warning: #e8c070;
+  --rw-warning-bg: rgba(232, 192, 112, 0.1);
+  --rw-info: #70b8e8;
+  --rw-info-bg: rgba(112, 184, 232, 0.1);
+
+  /* Spacing */
+  --rw-space-xs: 0.25rem;
+  --rw-space-sm: 0.5rem;
+  --rw-space-md: 1rem;
+  --rw-space-lg: 1.5rem;
+  --rw-space-xl: 2rem;
+  --rw-space-2xl: 3rem;
+  --rw-space-3xl: 4rem;
+
+  /* Border Radius */
+  --rw-radius-sm: 8px;
+  --rw-radius-md: 12px;
+  --rw-radius-lg: 16px;
+  --rw-radius-xl: 24px;
+  --rw-radius-full: 9999px;
+
+  /* Shadows */
+  --rw-shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --rw-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  --rw-shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+  --rw-shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+  --rw-shadow-xl: 0 20px 60px rgba(0,0,0,0.6);
+
+  /* Typography */
+  --rw-font: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  --rw-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --rw-font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Transitions */
+  --rw-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --rw-transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --rw-transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Glass */
+  --rw-glass-bg: rgba(32, 28, 26, 0.72);
+  --rw-glass-border: rgba(232, 168, 192, 0.08);
+
+  /* Z-index scale */
+  --rw-z-dropdown: 100;
+  --rw-z-sticky: 200;
+  --rw-z-overlay: 300;
+  --rw-z-modal: 400;
+  --rw-z-toast: 500;
+}
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+  --rw-accent: #d4849c;
+  --rw-accent-dark: #c0708a;
+  --rw-accent-light: #fce4ec;
+  --rw-accent-bg: #fce4ec;
+  --rw-accent-text: #8a3a52;
+
+  --rw-secondary: #9878b8;
+  --rw-secondary-dark: #7a5a9a;
+  --rw-secondary-light: #d8c8e8;
+  --rw-secondary-bg: #f3e5f5;
+  --rw-secondary-text: #5a3878;
+
+  --rw-bg: #fefdfb;
+  --rw-surface: #fff9f5;
+  --rw-surface-hover: #f0ebe5;
+  --rw-surface-elevated: #ffffff;
+
+  --rw-border: #e8e0dc;
+  --rw-border-light: #f0e8e4;
+
+  --rw-text: #1d1d1f;
+  --rw-text-secondary: #6e6e73;
+  --rw-text-muted: #a1a1a6;
+
+  --rw-success: #2ea860;
+  --rw-success-bg: rgba(46, 168, 96, 0.1);
+  --rw-danger: #dc3545;
+  --rw-danger-bg: rgba(220, 53, 69, 0.1);
+  --rw-warning: #d4a020;
+  --rw-warning-bg: rgba(212, 160, 32, 0.1);
+  --rw-info: #2080c0;
+  --rw-info-bg: rgba(32, 128, 192, 0.1);
+
+  --rw-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --rw-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --rw-shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+  --rw-shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+  --rw-shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+
+  --rw-glass-bg: rgba(255, 255, 255, 0.72);
+  --rw-glass-border: rgba(0, 0, 0, 0.06);
+}

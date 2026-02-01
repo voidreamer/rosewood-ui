@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosewood UI — Landing Page</title>
+  <link rel="stylesheet" href="../dist/rosewood.css">
+  <style>
+    .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; }
+    .hero-glow { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,168,192,0.1), transparent 70%); border-radius: 50%; top: 10%; left: 50%; transform: translateX(-50%); pointer-events: none; animation: rw-glow 4s ease-in-out infinite; }
+    .pricing-card--popular { border-color: var(--rw-accent); box-shadow: 0 0 0 1px var(--rw-accent), var(--rw-shadow-lg); }
+    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--rw-accent); color: #000; font-size: 12px; font-weight: 700; padding: 4px 16px; border-radius: var(--rw-radius-full); white-space: nowrap; }
+    .price { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-answer.open { max-height: 200px; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="rw-navbar" style="position:fixed; top:0; z-index:200;">
+    <a href="#" class="rw-navbar__brand">
+      <div class="rw-navbar__logo">🌹</div>
+      Rosewood
+    </a>
+    <div class="rw-navbar__nav" style="display:none">
+      <a href="#features" class="rw-navbar__link">Features</a>
+      <a href="#pricing" class="rw-navbar__link">Pricing</a>
+      <a href="#faq" class="rw-navbar__link">FAQ</a>
+    </div>
+    <div class="rw-navbar__actions">
+      <button class="rw-btn rw-btn--ghost rw-btn--sm">Sign In</button>
+      <button class="rw-btn rw-btn--primary rw-btn--sm rw-btn--pill">Get Started</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="position: relative;">
+    <div class="hero-glow"></div>
+    <div style="position:relative; z-index:1; max-width: 680px;">
+      <span class="rw-badge rw-badge--accent rw-mb-lg" style="display:inline-flex">
+        <span class="rw-badge__dot" style="animation: rw-pulse 2s infinite"></span>
+        Now in Beta
+      </span>
+      <h1 class="rw-h1 rw-mb-md">CSS that feels like <span class="rw-gradient-text">home</span></h1>
+      <p class="rw-text-lg rw-text-secondary rw-mb-xl" style="max-width:520px; margin-left:auto; margin-right:auto;">
+        A warm, cozy component library. No build tools, no JavaScript, no cold corporate blues. Just beautiful CSS.
+      </p>
+      <div class="rw-flex rw-flex--center rw-flex--gap-md">
+        <button class="rw-btn rw-btn--primary rw-btn--lg rw-btn--pill">Get Started Free</button>
+        <button class="rw-btn rw-btn--secondary rw-btn--lg rw-btn--pill">View Docs →</button>
+      </div>
+      <p class="rw-text-xs rw-text-muted rw-mt-md">Free forever · No account needed · MIT Licensed</p>
+
+      <!-- Waveform -->
+      <div class="rw-waveform rw-mt-xl" style="height:60px">
+        <div class="rw-waveform__bar" style="height:20px; animation-delay:0s"></div>
+        <div class="rw-waveform__bar" style="height:36px; animation-delay:0.08s"></div>
+        <div class="rw-waveform__bar" style="height:28px; animation-delay:0.16s"></div>
+        <div class="rw-waveform__bar" style="height:44px; animation-delay:0.24s"></div>
+        <div class="rw-waveform__bar" style="height:20px; animation-delay:0.32s"></div>
+        <div class="rw-waveform__bar" style="height:36px; animation-delay:0.4s"></div>
+        <div class="rw-waveform__bar" style="height:24px; animation-delay:0.48s"></div>
+        <div class="rw-waveform__bar" style="height:40px; animation-delay:0.56s"></div>
+        <div class="rw-waveform__bar" style="height:16px; animation-delay:0.64s"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="rw-section rw-section--alt">
+    <div class="rw-container--lg" style="margin:0 auto;">
+      <div class="rw-text-center rw-mb-xl">
+        <span class="rw-label rw-mb-sm">Features</span>
+        <h2 class="rw-h2 rw-mb-sm">Everything you need</h2>
+        <p class="rw-text-secondary" style="max-width:500px; margin:0 auto;">Built for developers who care about aesthetics but don't want the overhead.</p>
+      </div>
+      <div class="rw-grid rw-grid--3">
+        <div class="rw-card rw-card--interactive">
+          <div style="font-size:2rem; margin-bottom:12px">🎨</div>
+          <h3 class="rw-h5 rw-mb-sm">Warm Color System</h3>
+          <p class="rw-text-sm rw-text-secondary">No cold blues. Every color has warmth baked in. Dark & light modes included.</p>
+        </div>
+        <div class="rw-card rw-card--interactive">
+          <div style="font-size:2rem; margin-bottom:12px">⚡</div>
+          <h3 class="rw-h5 rw-mb-sm">Zero JavaScript</h3>
+          <p class="rw-text-sm rw-text-secondary">Pure CSS. Works with any framework or none at all. Under 10KB minified.</p>
+        </div>
+        <div class="rw-card rw-card--interactive">
+          <div style="font-size:2rem; margin-bottom:12px">🧩</div>
+          <h3 class="rw-h5 rw-mb-sm">Composable Components</h3>
+          <p class="rw-text-sm rw-text-secondary">Mix and match. Every component is self-contained and easy to customize.</p>
+        </div>
+        <div class="rw-card rw-card--interactive">
+          <div style="font-size:2rem; margin-bottom:12px">♿</div>
+          <h3 class="rw-h5 rw-mb-sm">Accessible</h3>
+          <p class="rw-text-sm rw-text-secondary">Focus states, contrast ratios, reduced-motion support. Built right.</p>
+        </div>
+        <div class="rw-card rw-card--interactive">
+          <div style="font-size:2rem; margin-bottom:12px">📱</div>
+          <h3 class="rw-h5 rw-mb-sm">Responsive</h3>
+          <p class="rw-text-sm rw-text-secondary">Mobile-first. Looks gorgeous on every screen size.</p>
+        </div>
+        <div class="rw-card rw-card--interactive">
+          <div style="font-size:2rem; margin-bottom:12px">🔧</div>
+          <h3 class="rw-h5 rw-mb-sm">CSS Variables</h3>
+          <p class="rw-text-sm rw-text-secondary">Override any token. Make it yours in seconds with custom properties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="rw-section">
+    <div class="rw-container--lg" style="margin:0 auto;">
+      <div class="rw-text-center rw-mb-xl">
+        <span class="rw-label rw-mb-sm">Pricing</span>
+        <h2 class="rw-h2 rw-mb-sm">Simple, honest pricing</h2>
+        <p class="rw-text-secondary">Just kidding. It's free. Forever. MIT licensed.</p>
+      </div>
+      <div class="rw-grid rw-grid--3">
+        <div class="rw-card" style="position:relative">
+          <h3 class="rw-h5 rw-mb-sm">Hobby</h3>
+          <p class="price rw-mb-sm">$0</p>
+          <p class="rw-text-xs rw-text-muted rw-mb-lg">forever</p>
+          <ul class="rw-list rw-mb-lg">
+            <li>All components</li>
+            <li>Dark + Light modes</li>
+            <li>MIT License</li>
+          </ul>
+          <button class="rw-btn rw-btn--secondary rw-btn--block">Get Started</button>
+        </div>
+        <div class="rw-card pricing-card--popular" style="position:relative">
+          <span class="pricing-badge">Most Popular</span>
+          <h3 class="rw-h5 rw-mb-sm">Pro</h3>
+          <p class="price rw-mb-sm">$0</p>
+          <p class="rw-text-xs rw-text-muted rw-mb-lg">still free lol</p>
+          <ul class="rw-list rw-mb-lg">
+            <li>Everything in Hobby</li>
+            <li>Priority support (GitHub Issues)</li>
+            <li>Our eternal gratitude</li>
+          </ul>
+          <button class="rw-btn rw-btn--primary rw-btn--block">Get Started</button>
+        </div>
+        <div class="rw-card" style="position:relative">
+          <h3 class="rw-h5 rw-mb-sm">Enterprise</h3>
+          <p class="price rw-mb-sm">$0</p>
+          <p class="rw-text-xs rw-text-muted rw-mb-lg">you get the idea</p>
+          <ul class="rw-list rw-mb-lg">
+            <li>Everything in Pro</li>
+            <li>Custom themes on request</li>
+            <li>A warm hug (virtual)</li>
+          </ul>
+          <button class="rw-btn rw-btn--secondary rw-btn--block">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="rw-section rw-section--alt">
+    <div class="rw-container--sm" style="margin:0 auto;">
+      <div class="rw-text-center rw-mb-xl">
+        <span class="rw-label rw-mb-sm">FAQ</span>
+        <h2 class="rw-h2">Common questions</h2>
+      </div>
+      <div class="rw-stack">
+        <div class="rw-card rw-card--interactive" onclick="this.querySelector('.faq-answer').classList.toggle('open')">
+          <div class="rw-flex rw-flex--between rw-flex--align-center">
+            <strong>Is this really free?</strong>
+            <span class="rw-text-muted">+</span>
+          </div>
+          <div class="faq-answer">
+            <p class="rw-text-sm rw-text-secondary rw-mt-md">Yes. MIT licensed. Use it for anything. Commercial, personal, whatever makes you happy.</p>
+          </div>
+        </div>
+        <div class="rw-card rw-card--interactive" onclick="this.querySelector('.faq-answer').classList.toggle('open')">
+          <div class="rw-flex rw-flex--between rw-flex--align-center">
+            <strong>Does it work with React/Vue/Svelte?</strong>
+            <span class="rw-text-muted">+</span>
+          </div>
+          <div class="faq-answer">
+            <p class="rw-text-sm rw-text-secondary rw-mt-md">Absolutely. It's pure CSS — it works with everything. Just import the stylesheet and use the classes.</p>
+          </div>
+        </div>
+        <div class="rw-card rw-card--interactive" onclick="this.querySelector('.faq-answer').classList.toggle('open')">
+          <div class="rw-flex rw-flex--between rw-flex--align-center">
+            <strong>How do I customize the colors?</strong>
+            <span class="rw-text-muted">+</span>
+          </div>
+          <div class="faq-answer">
+            <p class="rw-text-sm rw-text-secondary rw-mt-md">Override CSS custom properties. Every color, spacing, and radius is a variable. Just set --rw-accent: your-color.</p>
+          </div>
+        </div>
+        <div class="rw-card rw-card--interactive" onclick="this.querySelector('.faq-answer').classList.toggle('open')">
+          <div class="rw-flex rw-flex--between rw-flex--align-center">
+            <strong>Why "Rosewood"?</strong>
+            <span class="rw-text-muted">+</span>
+          </div>
+          <div class="faq-answer">
+            <p class="rw-text-sm rw-text-secondary rw-mt-md">Rosewood is a warm, rich wood. The rose pink accent + warm brown palette = rosewood. Also it sounds nice. 🌹</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--rw-border-light); padding: 40px 24px; text-align: center;">
+    <p style="font-weight:700; color: var(--rw-accent); margin-bottom: 16px;">🌹 Rosewood UI</p>
+    <div class="rw-flex rw-flex--center rw-flex--gap-lg rw-mb-md">
+      <a href="#" class="rw-text-sm rw-text-muted" style="text-decoration:none">GitHub</a>
+      <a href="#" class="rw-text-sm rw-text-muted" style="text-decoration:none">Documentation</a>
+      <a href="#" class="rw-text-sm rw-text-muted" style="text-decoration:none">License</a>
+    </div>
+    <p class="rw-text-xs rw-text-muted">Made with warmth · MIT License · © 2025</p>
+  </footer>
+</body>
+</html>

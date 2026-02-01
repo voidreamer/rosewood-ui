@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosewood UI — Forms</title>
+  <link rel="stylesheet" href="../dist/rosewood.css">
+  <style>.theme-toggle { position: fixed; top: 16px; right: 16px; z-index: 999; }</style>
+</head>
+<body>
+  <button class="rw-btn rw-btn--secondary rw-btn--sm theme-toggle" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">🌙 Theme</button>
+
+  <div class="rw-container--sm rw-section" style="margin: 0 auto;">
+    <h1 class="rw-h2 rw-mb-sm">Create Account</h1>
+    <p class="rw-text-secondary rw-mb-xl">Join the coziest platform on the internet.</p>
+
+    <!-- Sign Up Form -->
+    <div class="rw-card rw-mb-xl">
+      <form onsubmit="event.preventDefault()">
+        <div class="rw-grid rw-grid--2">
+          <div class="rw-form-group">
+            <label class="rw-form-label">First Name</label>
+            <input class="rw-input" type="text" placeholder="Alejandro">
+          </div>
+          <div class="rw-form-group">
+            <label class="rw-form-label">Last Name</label>
+            <input class="rw-input" type="text" placeholder="García">
+          </div>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-form-label">Email</label>
+          <input class="rw-input" type="email" placeholder="hello@rosewood.ui">
+          <span class="rw-form-hint">We'll never share your email.</span>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-form-label">Password</label>
+          <input class="rw-input" type="password" placeholder="••••••••">
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-form-label">Plan</label>
+          <select class="rw-select">
+            <option>Free — $0/mo</option>
+            <option>Pro — $12/mo</option>
+            <option>Enterprise — Custom</option>
+          </select>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-form-label">Bio</label>
+          <textarea class="rw-textarea" rows="3" placeholder="Tell us about yourself..."></textarea>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-checkbox"><input type="checkbox" checked> I accept the Terms of Service</label>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-checkbox"><input type="checkbox"> Subscribe to newsletter</label>
+        </div>
+        <button class="rw-btn rw-btn--primary rw-btn--block rw-btn--lg">Create Account</button>
+      </form>
+    </div>
+
+    <!-- Input Sizes -->
+    <h2 class="rw-h4 rw-mb-md">Input Sizes</h2>
+    <div class="rw-stack rw-mb-xl">
+      <input class="rw-input rw-input--sm" placeholder="Small input">
+      <input class="rw-input" placeholder="Default input">
+      <input class="rw-input rw-input--lg" placeholder="Large input">
+    </div>
+
+    <!-- States -->
+    <h2 class="rw-h4 rw-mb-md">Input States</h2>
+    <div class="rw-stack rw-mb-xl">
+      <div class="rw-form-group">
+        <label class="rw-form-label">Normal</label>
+        <input class="rw-input" value="Normal value">
+      </div>
+      <div class="rw-form-group">
+        <label class="rw-form-label">Error</label>
+        <input class="rw-input rw-input--error" value="Invalid input">
+        <span class="rw-form-error">This field is required</span>
+      </div>
+      <div class="rw-form-group">
+        <label class="rw-form-label">Disabled</label>
+        <input class="rw-input" value="Can't touch this" disabled style="opacity:0.5">
+      </div>
+    </div>
+
+    <!-- Radio & Toggle -->
+    <h2 class="rw-h4 rw-mb-md">Radios & Toggles</h2>
+    <div class="rw-card rw-mb-xl">
+      <p class="rw-form-label rw-mb-md">Notification Preferences</p>
+      <div class="rw-stack--sm" style="display:flex;flex-direction:column;gap:12px">
+        <label class="rw-radio"><input type="radio" name="notif" checked> All notifications</label>
+        <label class="rw-radio"><input type="radio" name="notif"> Important only</label>
+        <label class="rw-radio"><input type="radio" name="notif"> None</label>
+      </div>
+      <hr class="rw-divider">
+      <div class="rw-flex rw-flex--between rw-flex--align-center rw-mb-md">
+        <div>
+          <p class="rw-form-label">Dark Mode</p>
+          <p class="rw-text-xs rw-text-muted">Use dark theme</p>
+        </div>
+        <button class="rw-toggle rw-toggle--active" onclick="this.classList.toggle('rw-toggle--active')"></button>
+      </div>
+      <div class="rw-flex rw-flex--between rw-flex--align-center">
+        <div>
+          <p class="rw-form-label">Email Digest</p>
+          <p class="rw-text-xs rw-text-muted">Weekly summary</p>
+        </div>
+        <button class="rw-toggle" onclick="this.classList.toggle('rw-toggle--active')"></button>
+      </div>
+    </div>
+
+    <p class="rw-text-center rw-text-muted rw-text-sm">🌹 Rosewood UI</p>
+  </div>
+</body>
+</html>

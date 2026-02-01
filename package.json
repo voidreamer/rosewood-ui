@@ -1,0 +1,33 @@
+{
+  "name": "rosewood-ui",
+  "version": "0.1.0",
+  "description": "A warm, cozy CSS component library. Like a fireplace in code form. 🔥",
+  "main": "dist/rosewood.css",
+  "style": "dist/rosewood.css",
+  "files": [
+    "dist/",
+    "src/css/"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "css",
+    "theme",
+    "ui",
+    "components",
+    "dark-mode",
+    "design-system",
+    "warm",
+    "cozy"
+  ],
+  "author": "voidreamer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voidreamer/rosewood-ui"
+  },
+  "devDependencies": {}
+}

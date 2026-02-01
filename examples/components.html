@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosewood UI — Component Gallery</title>
+  <link rel="stylesheet" href="../dist/rosewood.css">
+  <style>
+    .demo-section { margin-bottom: 3rem; }
+    .demo-section h2 { margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rw-border); }
+    .demo-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 1rem; }
+    .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .color-swatch { width: 60px; height: 60px; border-radius: var(--rw-radius-md); display: flex; align-items: end; padding: 4px; }
+    .color-swatch span { font-size: 10px; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+    .theme-toggle { position: fixed; top: 16px; right: 16px; z-index: 999; }
+  </style>
+</head>
+<body>
+  <button class="rw-btn rw-btn--secondary rw-btn--sm theme-toggle" onclick="toggleTheme()">🌙 Toggle Theme</button>
+
+  <div class="rw-container rw-section">
+    <h1 class="rw-h1 rw-mb-lg">🌹 Rosewood UI</h1>
+    <p class="rw-text-lg rw-text-secondary rw-mb-xl">Component Gallery — every component, every variant.</p>
+
+    <!-- Colors -->
+    <div class="demo-section">
+      <h2 class="rw-h3">🎨 Colors</h2>
+      <div class="demo-row">
+        <div class="color-swatch" style="background:#1a1614"><span>#1a1614</span></div>
+        <div class="color-swatch" style="background:#201c1a"><span>#201c1a</span></div>
+        <div class="color-swatch" style="background:#352f2b"><span>#352f2b</span></div>
+        <div class="color-swatch" style="background:#3a3230"><span>#3a3230</span></div>
+        <div class="color-swatch" style="background:#e8a8c0"><span>#e8a8c0</span></div>
+        <div class="color-swatch" style="background:#c0708a"><span>#c0708a</span></div>
+        <div class="color-swatch" style="background:#b898d0"><span>#b898d0</span></div>
+        <div class="color-swatch" style="background:#88c8a8"><span>#88c8a8</span></div>
+        <div class="color-swatch" style="background:#e87070"><span>#e87070</span></div>
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="demo-section">
+      <h2 class="rw-h3">📝 Typography</h2>
+      <h1 class="rw-h1">Heading 1</h1>
+      <h2 class="rw-h2">Heading 2</h2>
+      <h3 class="rw-h3">Heading 3</h3>
+      <h4 class="rw-h4">Heading 4</h4>
+      <h5 class="rw-h5">Heading 5</h5>
+      <h6 class="rw-h6 rw-mb-md">Heading 6</h6>
+      <p class="rw-text-lg rw-mb-sm">Large body text for introductions and hero sections.</p>
+      <p class="rw-mb-sm">Regular body text. The quick brown fox jumps over the lazy dog.</p>
+      <p class="rw-text-sm rw-text-secondary rw-mb-md">Small secondary text for captions and metadata.</p>
+      <p class="rw-gradient-text rw-h3 rw-mb-md">Gradient accent text</p>
+      <span class="rw-label rw-mb-md">Section Label</span>
+      <div class="rw-blockquote rw-mb-md">This is a blockquote. Warm and cozy, like everything in Rosewood.</div>
+      <a href="#" class="rw-link">Styled link →</a>
+    </div>
+
+    <!-- Buttons -->
+    <div class="demo-section">
+      <h2 class="rw-h3">🔘 Buttons</h2>
+      <div class="demo-row">
+        <button class="rw-btn rw-btn--primary">Primary</button>
+        <button class="rw-btn rw-btn--secondary">Secondary</button>
+        <button class="rw-btn rw-btn--ghost">Ghost</button>
+        <button class="rw-btn rw-btn--danger">Danger</button>
+        <button class="rw-btn rw-btn--accent-outline">Accent Outline</button>
+      </div>
+      <div class="demo-row">
+        <button class="rw-btn rw-btn--primary rw-btn--sm">Small</button>
+        <button class="rw-btn rw-btn--primary">Medium</button>
+        <button class="rw-btn rw-btn--primary rw-btn--lg">Large</button>
+      </div>
+      <div class="demo-row">
+        <button class="rw-btn rw-btn--primary rw-btn--pill">Pill Button</button>
+        <button class="rw-btn rw-btn--primary rw-btn--icon">✦</button>
+        <button class="rw-btn rw-btn--primary" disabled>Disabled</button>
+        <button class="rw-btn rw-btn--primary rw-btn--loading">Loading</button>
+      </div>
+      <div class="demo-row">
+        <div class="rw-btn-group">
+          <button class="rw-btn rw-btn--secondary">Left</button>
+          <button class="rw-btn rw-btn--secondary">Center</button>
+          <button class="rw-btn rw-btn--secondary">Right</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="demo-section">
+      <h2 class="rw-h3">🃏 Cards</h2>
+      <div class="demo-grid">
+        <div class="rw-card">
+          <div class="rw-card__header"><span class="rw-card__title">Basic Card</span></div>
+          <div class="rw-card__body">Simple surface card with border.</div>
+        </div>
+        <div class="rw-card rw-card--elevated">
+          <div class="rw-card__header"><span class="rw-card__title">Elevated</span></div>
+          <div class="rw-card__body">Raised with shadow.</div>
+        </div>
+        <div class="rw-card rw-card--interactive">
+          <div class="rw-card__header"><span class="rw-card__title">Interactive</span></div>
+          <div class="rw-card__body">Hover me — lifts on hover.</div>
+        </div>
+        <div class="rw-card rw-card--accent">
+          <div class="rw-card__header"><span class="rw-card__title">Accent Border</span></div>
+          <div class="rw-card__body">Left accent border.</div>
+        </div>
+        <div class="rw-card rw-card--glass">
+          <div class="rw-card__header"><span class="rw-card__title">Glass</span></div>
+          <div class="rw-card__body">Frosted glass effect.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="demo-section">
+      <h2 class="rw-h3">🏷️ Badges</h2>
+      <div class="demo-row">
+        <span class="rw-badge">Default</span>
+        <span class="rw-badge rw-badge--accent"><span class="rw-badge__dot"></span> Accent</span>
+        <span class="rw-badge rw-badge--success">Success</span>
+        <span class="rw-badge rw-badge--danger">Danger</span>
+        <span class="rw-badge rw-badge--warning">Warning</span>
+        <span class="rw-badge rw-badge--info">Info</span>
+      </div>
+      <div class="demo-row">
+        <span class="rw-badge rw-badge--accent rw-badge--sm">Small</span>
+        <span class="rw-badge rw-badge--accent">Default</span>
+        <span class="rw-badge rw-badge--accent rw-badge--lg">Large</span>
+      </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="demo-section">
+      <h2 class="rw-h3">📝 Form Inputs</h2>
+      <div style="max-width: 400px;">
+        <div class="rw-form-group">
+          <label class="rw-form-label">Text Input</label>
+          <input class="rw-input" type="text" placeholder="Type something warm...">
+          <span class="rw-form-hint">This is a hint message</span>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-form-label">Error State</label>
+          <input class="rw-input rw-input--error" type="text" value="Invalid value">
+          <span class="rw-form-error">This field has an error</span>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-form-label">Select</label>
+          <select class="rw-select">
+            <option>Choose an option</option>
+            <option>Cozy</option>
+            <option>Warm</option>
+            <option>Toasty</option>
+          </select>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-form-label">Textarea</label>
+          <textarea class="rw-textarea" placeholder="Tell us your story..."></textarea>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-checkbox"><input type="checkbox" checked> I agree to be cozy</label>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-checkbox"><input type="checkbox"> Unchecked option</label>
+        </div>
+        <div class="rw-form-group">
+          <label class="rw-radio"><input type="radio" name="demo" checked> Option A</label>
+          <label class="rw-radio"><input type="radio" name="demo"> Option B</label>
+        </div>
+        <div class="demo-row">
+          <span class="rw-text-sm">Toggle:</span>
+          <button class="rw-toggle rw-toggle--active" onclick="this.classList.toggle('rw-toggle--active')"></button>
+          <button class="rw-toggle" onclick="this.classList.toggle('rw-toggle--active')"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="demo-section">
+      <h2 class="rw-h3">🧭 Navigation</h2>
+      
+      <h4 class="rw-h5 rw-mb-sm">Tabs</h4>
+      <div class="rw-tabs rw-mb-lg">
+        <button class="rw-tab rw-tab--active">Overview</button>
+        <button class="rw-tab">Analytics</button>
+        <button class="rw-tab">Settings</button>
+        <button class="rw-tab">Billing</button>
+      </div>
+
+      <h4 class="rw-h5 rw-mb-sm">Pill Tabs</h4>
+      <div class="rw-tabs rw-tabs--pills rw-mb-lg">
+        <button class="rw-tab rw-tab--active">Day</button>
+        <button class="rw-tab">Week</button>
+        <button class="rw-tab">Month</button>
+      </div>
+
+      <h4 class="rw-h5 rw-mb-sm">Breadcrumbs</h4>
+      <nav class="rw-breadcrumbs">
+        <a href="#" class="rw-breadcrumbs__item">Home</a>
+        <span class="rw-breadcrumbs__separator">›</span>
+        <a href="#" class="rw-breadcrumbs__item">Components</a>
+        <span class="rw-breadcrumbs__separator">›</span>
+        <span class="rw-breadcrumbs__item rw-breadcrumbs__item--active">Navigation</span>
+      </nav>
+    </div>
+
+    <!-- Tables -->
+    <div class="demo-section">
+      <h2 class="rw-h3">📊 Tables</h2>
+      <div class="rw-table-wrapper">
+        <table class="rw-table">
+          <thead>
+            <tr><th>Name</th><th>Status</th><th>Role</th><th>Revenue</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Alejandro</td><td><span class="rw-badge rw-badge--success">Active</span></td><td>Admin</td><td>$12,400</td></tr>
+            <tr><td>Sofia</td><td><span class="rw-badge rw-badge--success">Active</span></td><td>Editor</td><td>$8,200</td></tr>
+            <tr><td>Merrino</td><td><span class="rw-badge rw-badge--warning">Pending</span></td><td>Agent</td><td>$∞</td></tr>
+            <tr><td>Ghost</td><td><span class="rw-badge rw-badge--danger">Offline</span></td><td>Viewer</td><td>$0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Animations -->
+    <div class="demo-section">
+      <h2 class="rw-h3">✨ Animations</h2>
+      <div class="demo-row">
+        <div class="rw-spinner rw-spinner--sm"></div>
+        <div class="rw-spinner"></div>
+        <div class="rw-spinner rw-spinner--lg"></div>
+      </div>
+      <div class="demo-row" style="margin-top: 1rem;">
+        <div class="rw-waveform" style="height: 40px;">
+          <div class="rw-waveform__bar" style="height:20px; animation-delay:0s"></div>
+          <div class="rw-waveform__bar" style="height:32px; animation-delay:0.1s"></div>
+          <div class="rw-waveform__bar" style="height:24px; animation-delay:0.2s"></div>
+          <div class="rw-waveform__bar" style="height:36px; animation-delay:0.3s"></div>
+          <div class="rw-waveform__bar" style="height:20px; animation-delay:0.4s"></div>
+          <div class="rw-waveform__bar" style="height:28px; animation-delay:0.5s"></div>
+          <div class="rw-waveform__bar" style="height:16px; animation-delay:0.6s"></div>
+        </div>
+      </div>
+      <div class="demo-row" style="margin-top: 1rem;">
+        <div class="rw-skeleton rw-skeleton--avatar"></div>
+        <div style="flex:1">
+          <div class="rw-skeleton rw-skeleton--title rw-mb-sm"></div>
+          <div class="rw-skeleton rw-skeleton--text"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layout -->
+    <div class="demo-section">
+      <h2 class="rw-h3">📐 Layout</h2>
+      <div class="rw-grid rw-grid--3 rw-mb-lg">
+        <div class="rw-card rw-card--compact rw-text-center">Col 1</div>
+        <div class="rw-card rw-card--compact rw-text-center">Col 2</div>
+        <div class="rw-card rw-card--compact rw-text-center">Col 3</div>
+      </div>
+    </div>
+
+    <hr class="rw-divider">
+    <p class="rw-text-center rw-text-muted rw-text-sm">🌹 Rosewood UI v0.1.0 — Made with warmth</p>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    }
+  </script>
+</body>
+</html>

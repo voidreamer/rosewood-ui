@@ -1,0 +1,91 @@
+/* ============================================================================
+   ROSEWOOD UI — Cards
+   ============================================================================
+   Variants: default, elevated, interactive
+   
+   Usage:
+     <div class="rw-card">Basic card</div>
+     <div class="rw-card rw-card--elevated">Elevated</div>
+     <div class="rw-card rw-card--interactive">Clickable</div>
+   ============================================================================ */
+
+.rw-card {
+  background: var(--rw-surface);
+  border: 1px solid var(--rw-border-light);
+  border-radius: var(--rw-radius-lg);
+  padding: var(--rw-space-lg);
+  transition: var(--rw-transition);
+}
+
+/* ── Elevated: stronger shadow ── */
+.rw-card--elevated {
+  background: var(--rw-surface-elevated);
+  box-shadow: var(--rw-shadow-md);
+  border-color: transparent;
+}
+
+/* ── Interactive: hover effects ── */
+.rw-card--interactive {
+  cursor: pointer;
+}
+
+.rw-card--interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--rw-shadow-lg);
+  border-color: var(--rw-accent);
+}
+
+.rw-card--interactive:active {
+  transform: translateY(0);
+}
+
+/* ── Card sections ── */
+.rw-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--rw-space-md);
+}
+
+.rw-card__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--rw-text);
+}
+
+.rw-card__subtitle {
+  font-size: 0.875rem;
+  color: var(--rw-text-secondary);
+  margin-top: 2px;
+}
+
+.rw-card__body {
+  color: var(--rw-text-secondary);
+  line-height: 1.6;
+}
+
+.rw-card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--rw-space-sm);
+  margin-top: var(--rw-space-md);
+  padding-top: var(--rw-space-md);
+  border-top: 1px solid var(--rw-border-light);
+}
+
+/* ── Card with accent border ── */
+.rw-card--accent {
+  border-left: 3px solid var(--rw-accent);
+}
+
+/* ── Card padding variants ── */
+.rw-card--compact { padding: var(--rw-space-md); }
+.rw-card--spacious { padding: var(--rw-space-2xl); }
+
+/* ── Glass card ── */
+.rw-card--glass {
+  background: var(--rw-glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-color: var(--rw-glass-border);
+}

@@ -1,0 +1,131 @@
+/* ============================================================================
+   ROSEWOOD UI — Typography
+   ============================================================================
+   Headings, body text, links, and lists.
+   
+   Classes:
+     .rw-h1 ... .rw-h6    — Heading styles (also auto-applied to h1-h6)
+     .rw-text-lg           — Large body text
+     .rw-text-sm           — Small text
+     .rw-text-xs           — Extra small text
+     .rw-text-muted        — Muted color
+     .rw-text-secondary    — Secondary color
+     .rw-text-accent       — Accent color
+     .rw-link              — Styled link
+     .rw-list              — Styled list with bullets
+     .rw-gradient-text     — Accent gradient text
+   ============================================================================ */
+
+.rw-h1, .rw-h2, .rw-h3, .rw-h4, .rw-h5, .rw-h6 {
+  font-family: var(--rw-font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--rw-text);
+  letter-spacing: -0.02em;
+}
+
+.rw-h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; }
+.rw-h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; }
+.rw-h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+.rw-h4 { font-size: 1.25rem; }
+.rw-h5 { font-size: 1rem; }
+.rw-h6 { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--rw-text-muted); }
+
+.rw-text-lg { font-size: 1.125rem; line-height: 1.65; }
+.rw-text-sm { font-size: 0.875rem; }
+.rw-text-xs { font-size: 0.75rem; }
+.rw-text-muted { color: var(--rw-text-muted); }
+.rw-text-secondary { color: var(--rw-text-secondary); }
+.rw-text-accent { color: var(--rw-accent); }
+
+.rw-link {
+  color: var(--rw-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.rw-link:hover {
+  color: var(--rw-accent-dark);
+  border-bottom-color: var(--rw-accent-dark);
+}
+
+/* Styled unordered list */
+.rw-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rw-space-sm);
+  padding-left: var(--rw-space-lg);
+}
+
+.rw-list li {
+  position: relative;
+  color: var(--rw-text-secondary);
+  line-height: 1.6;
+}
+
+.rw-list li::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--rw-space-lg));
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rw-accent);
+}
+
+/* Ordered list */
+.rw-list--ordered {
+  counter-reset: rw-list;
+}
+
+.rw-list--ordered li::before {
+  content: counter(rw-list);
+  counter-increment: rw-list;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--rw-accent);
+  top: 0.15em;
+}
+
+/* Gradient text */
+.rw-gradient-text {
+  background: linear-gradient(135deg, var(--rw-accent), var(--rw-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section label */
+.rw-label {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rw-accent);
+}
+
+/* Blockquote */
+.rw-blockquote {
+  padding: var(--rw-space-md) var(--rw-space-lg);
+  border-left: 3px solid var(--rw-accent);
+  background: var(--rw-surface);
+  border-radius: 0 var(--rw-radius-md) var(--rw-radius-md) 0;
+  color: var(--rw-text-secondary);
+  font-style: italic;
+}
+
+/* Horizontal rule */
+.rw-divider {
+  border: none;
+  height: 1px;
+  background: var(--rw-border);
+  margin: var(--rw-space-xl) 0;
+}
