@@ -10,6 +10,7 @@ Dark-first design system with CSS components and React wrappers.
 |---------|-------------|
 | [`@rosewood-ui/css`](./packages/css) | Pure CSS component library |
 | [`@rosewood-ui/react`](./packages/react) | React + TypeScript components |
+| [`rosewood-ui`](./packages/pyside) | PySide6/Qt components |
 
 ## Quick Start
 
@@ -44,6 +45,23 @@ function App() {
     </ToastProvider>
   )
 }
+```
+
+### PySide6/Qt
+
+```bash
+pip install rosewood-ui[pyside]
+```
+
+```python
+from PySide6.QtWidgets import QApplication
+from rosewood import apply_theme, RwButton, RwCard
+
+app = QApplication([])
+apply_theme(app)  # Dark theme by default
+
+btn = RwButton("Hello", variant="primary")
+card = RwCard(variant="elevated")
 ```
 
 ## Development
