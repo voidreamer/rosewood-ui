@@ -1,0 +1,178 @@
+/* ============================================================================
+   ROSEWOOD UI — Glass Effects
+   ============================================================================
+   Apple-inspired glassmorphic utilities and component variants.
+   
+   Utilities:
+     .rw-glass              — Base glass surface
+     .rw-glass--subtle      — Lighter blur, more transparent
+     .rw-glass--heavy       — Stronger blur, more opaque
+     .rw-glass--frosted     — Saturated frosted glass (Apple navbar style)
+   
+   Component modifiers:
+     .rw-card--glass        — Glass card (also in cards.css)
+     .rw-navbar--glass      — Glass navbar
+     .rw-sidebar--glass     — Glass sidebar
+     .rw-modal--glass       — Glass modal
+     .rw-input--glass       — Glass input field
+     .rw-btn--glass         — Glass button
+   
+   Usage:
+     <div class="rw-glass">Frosted glass panel</div>
+     <nav class="rw-navbar rw-navbar--glass">Blurred nav</nav>
+     <div class="rw-card rw-card--glass">Glass card</div>
+   ============================================================================ */
+
+/* ── Base Glass ── */
+.rw-glass {
+  background: var(--rw-glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--rw-glass-border);
+}
+
+.rw-glass--subtle {
+  background: var(--rw-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--rw-glass-border);
+}
+
+.rw-glass--heavy {
+  background: var(--rw-glass-bg);
+  backdrop-filter: saturate(150%) blur(32px);
+  -webkit-backdrop-filter: saturate(150%) blur(32px);
+  border: 1px solid var(--rw-glass-border);
+  opacity: 0.95;
+}
+
+.rw-glass--frosted {
+  background: var(--rw-glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--rw-glass-border);
+}
+
+/* ── Glass Navbar ── */
+.rw-navbar--glass {
+  background: var(--rw-glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rw-glass-border);
+}
+
+/* ── Glass Sidebar ── */
+.rw-sidebar--glass {
+  background: var(--rw-glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-right: 1px solid var(--rw-glass-border);
+}
+
+/* ── Glass Modal ── */
+.rw-modal--glass {
+  background: var(--rw-glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--rw-glass-border);
+  box-shadow: var(--rw-shadow-xl);
+}
+
+.rw-overlay--glass {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── Glass Input ── */
+.rw-input--glass {
+  background: var(--rw-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: var(--rw-glass-border);
+}
+
+.rw-input--glass:focus {
+  border-color: var(--rw-accent);
+  box-shadow: 0 0 0 3px var(--rw-accent-light);
+}
+
+/* ── Glass Button ── */
+.rw-btn--glass {
+  background: var(--rw-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--rw-glass-border);
+  color: var(--rw-text);
+}
+
+.rw-btn--glass:hover {
+  background: var(--rw-surface-hover);
+  border-color: var(--rw-accent);
+}
+
+/* ── Glass List Item ── */
+.rw-list-item--glass {
+  background: var(--rw-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--rw-glass-border);
+  border-radius: var(--rw-radius-md);
+  padding: var(--rw-space-md);
+  transition: var(--rw-transition);
+}
+
+.rw-list-item--glass:hover {
+  background: var(--rw-surface-hover);
+  border-color: var(--rw-accent);
+  border-color: rgba(232, 168, 192, 0.15);
+}
+
+/* ── Gradient Accents ── */
+.rw-gradient-accent {
+  background: linear-gradient(135deg, var(--rw-accent), var(--rw-secondary));
+}
+
+.rw-gradient-text {
+  background: linear-gradient(135deg, var(--rw-accent), var(--rw-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rw-btn--gradient {
+  background: linear-gradient(135deg, var(--rw-accent), var(--rw-secondary));
+  color: var(--rw-bg);
+  border: none;
+  font-weight: 600;
+}
+
+.rw-btn--gradient:hover {
+  box-shadow: 0 4px 20px var(--rw-accent-light);
+  transform: translateY(-1px);
+}
+
+.rw-btn--gradient:active {
+  transform: translateY(0);
+}
+
+/* ── Glow Effects ── */
+.rw-glow {
+  box-shadow: 0 0 20px var(--rw-accent-light);
+}
+
+.rw-glow--hover:hover {
+  box-shadow: 0 8px 32px var(--rw-accent-light);
+}
+
+/* ── Card Glass Interactive ── */
+.rw-card--glass.rw-card--interactive:hover {
+  transform: translateY(-2px);
+  border-color: rgba(232, 168, 192, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .rw-card--glass.rw-card--interactive:hover {
+  border-color: rgba(212, 132, 156, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}

@@ -8,6 +8,8 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   onClose?: () => void
   /** Modal size */
   size?: 'sm' | 'md' | 'lg' | 'full'
+  /** Glass variant */
+  glass?: boolean
   /** Modal title */
   title?: string
   /** Footer content */
@@ -16,7 +18,7 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Modal = forwardRef<HTMLDivElement, ModalProps>(
-  ({ open = false, onClose, size = 'md', title, footer, className, children, ...props }, ref) => {
+  ({ open = false, onClose, size = 'md', glass, title, footer, className, children, ...props }, ref) => {
     const handleKeyDown = useCallback((e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose?.()
     }, [onClose])
@@ -35,7 +37,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     if (!open) return null
 
     return (
-      <div className="rw-overlay" onClick={(e) => e.target === e.currentTarget && onClose?.()}>
+      <div className={cn('rw-overlay', glass && 'rw-overlay--glass')} onClick={(e) => e.target === e.currentTarget && onClose?.()}>
         <div
           ref={ref}
           role="dialog"
@@ -44,6 +46,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
           className={cn(
             'rw-modal',
             size !== 'md' && `rw-modal--${size}`,
+            glass && 'rw-modal--glass',
             className,
           )}
           {...props}

@@ -3,7 +3,7 @@ import { cn } from '../../utils'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /** Visual style variant */
-  variant?: 'primary' | 'secondary' | 'ghost' | 'danger' | 'accent-outline'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger' | 'accent-outline' | 'glass' | 'gradient'
   /** Button size */
   size?: 'sm' | 'md' | 'lg'
   /** Full width button */
